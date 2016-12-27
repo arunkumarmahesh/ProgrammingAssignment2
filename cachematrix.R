@@ -20,8 +20,7 @@ makeCacheMatrix <- function(x = matrix()) {
                                  list(set = set, get = get,             
                                       setinverse = setinverse,             
                                       getinverse = getinverse)
-        
-}
+        }
 
 
 ## This function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
@@ -30,13 +29,13 @@ makeCacheMatrix <- function(x = matrix()) {
 ## For example, if X is a square invertible matrix, then solve(X) returns its inverse.
                          
 cacheSolve <- function(x, ...) {
-         invrs <= x$getinverse()       
-                if(!is.null(invrs)) {                
-                        message("getting cached data")                
-                        return(invrs)       
-                }       
-                mat <- x$get()        
-                invrs <- solve(mat, ...)        
-                x$setinverse(invrs)        
-                invrs
+        invrs <= x$getinverse()       
+        if(!is.null(invrs)) {                
+                message("getting cached data")                
+                return(invrs)       
+        }       
+        mat <- x$get()        
+        invrs <- solve(mat, ...)        
+        x$setinverse(invrs)        
+        invrs
 }
